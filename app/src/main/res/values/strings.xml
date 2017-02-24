@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AppShop</string>
+    <string name="textsplash">Online Shopping</string>
+    <string name="text_search">Tìm Kiếm Sản Phẩm</string>
+    <string name="title_search">Search</string>
+    <string name="title_giohang">Giỏ Hàng</string>
+    <string name="title_Menu">More</string>
+    <string name="open">Mở</string>
+    <string name="close">Đóng</string>
+
+
+    <string name="title_itDangNhap">Đăng Nhập</string>
+    <string name="title_itThongBao">Thông báo</string>
+    <string name="title_itMongMuon">Danh sách mong muốn</string>
+    <string name="title_itDonHangCuaToi">Đơn hàng của tôi</string>
+    <string name="title_itCaiDat">Cài đặt</string>
+    <string name="title_itChinhSach">Chính sách</string>
+    <string name="title_itTroGiup">Trợ giúp</string>
+    <string name="title_itDangXuat">Đăng xuất</string>
+</resources>
