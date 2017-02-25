@@ -1,16 +1,17 @@
 package vn.edu.fpoly.appshop.View.TrangChu;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ import vn.edu.fpoly.appshop.Adapter.ViewpagerAdapter;
 import vn.edu.fpoly.appshop.Model.ObjectClass.LoaiSanPham;
 import vn.edu.fpoly.appshop.Presenter.TrangChu.XuLyMenu.PresenterLogicXuLyMenu;
 import vn.edu.fpoly.appshop.R;
+import vn.edu.fpoly.appshop.View.Account.AccountActivity;
 
 public class TrangChuActivity extends AppCompatActivity implements  ViewXuLyMenu{
     Toolbar toolbar;
@@ -59,15 +61,42 @@ public class TrangChuActivity extends AppCompatActivity implements  ViewXuLyMenu
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menutrangchu,menu);
+        getMenuInflater().inflate(R.menu.menutrangchu, menu);
         return true ;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(drawerToggle.onOptionsItemSelected(item)){
-            return true;
+        //Log.d("Item ID: ", String.valueOf(item.getItemId()));
+        switch (item.getItemId()){
+            case R.id.itDangNhap:
+                Intent intent = new Intent(this, AccountActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.itThongBao:
+                Toast.makeText(this, "Thong Bao", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.itDanhSachMongMuon:
+                Toast.makeText(this, "Danh sach mong muon", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.itDonHangCuaToi:
+                Toast.makeText(this, "Don Hang", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.itCaiDat:
+                Toast.makeText(this, "Cai dat", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.itChinhSach:
+                Toast.makeText(this, "Chinh sach", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.itTroGiup:
+                Toast.makeText(this, "Tro giup", Toast.LENGTH_LONG).show();
+                break;
+
         }
+
+//        if(drawerToggle.onOptionsItemSelected(item)){
+//            return true;
+//        }
         return true;
     }
 

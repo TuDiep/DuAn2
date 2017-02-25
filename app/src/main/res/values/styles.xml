@@ -21,4 +21,9 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    // Custom Editex Dang Nhap
+    <declare-styleable name="PasswordEditText">
+        <attr name="useStrike" format="boolean"/>
+    </declare-styleable>
+
 </resources>

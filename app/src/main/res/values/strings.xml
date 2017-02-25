@@ -17,4 +17,21 @@
     <string name="title_itChinhSach">Chính sách</string>
     <string name="title_itTroGiup">Trợ giúp</string>
     <string name="title_itDangXuat">Đăng xuất</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Họ tên đầy đủ</string>
+    <string name="prompt_email">Địa chỉ Email</string>
+    <string name="prompt_password">Password (bắt buộc)</string>
+    <string name="prompt_password_retype">Password (nhập lại)</string>
+    <string name="title_button_dangky">Đăng Ký</string>
+    <string name="title_button_dangnhap">Đăng Nhập</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">Địa chỉ email này không hợp lệ</string>
+    <string name="error_invalid_password">Mật khẩu quá ngắn</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">Mật khẩu này là không chính xác</string>
+    <string name="permission_rationale">"Liên hệ quyền là cần thiết để cung cấp email
+         hoàn tất."
+    </string>
 </resources>
