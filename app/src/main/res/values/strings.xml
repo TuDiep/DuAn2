@@ -34,4 +34,7 @@
     <string name="permission_rationale">"Liên hệ quyền là cần thiết để cung cấp email
          hoàn tất."
     </string>
+
+    // Điều khoản
+    <string name="dieu_khoan">Tôi đã đọc và hiểu rõ các điều khoản và chính sách bảo mật của AppShop</string>
 </resources>
