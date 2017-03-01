@@ -13,11 +13,11 @@ import vn.edu.fpoly.appshop.R;
  * Created by Macanh on 2/20/2017.
  */
 
-public class FragmentLapTop extends Fragment {
+public class FragmentMevaBe extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.layout_fragment_laptop,container,false);
+        View view = inflater.inflate(R.layout.layout_fragment_mevabe,container,false);
         return view;
     }
 }

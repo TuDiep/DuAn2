@@ -11,6 +11,7 @@ import java.util.concurrent.ExecutionException;
 
 import vn.edu.fpoly.appshop.ConnectInternet.DownloadJSON;
 import vn.edu.fpoly.appshop.Model.ObjectClass.LoaiSanPham;
+import vn.edu.fpoly.appshop.View.TrangChu.TrangChuActivity;
 
 /**
  * Created by Macanh on 2/25/2017.
@@ -48,12 +49,12 @@ public class XuLyJSONMenu {
 
         List<LoaiSanPham> loaiSanPhamList = new ArrayList<>();
         List<HashMap<String,String>> attrs = new ArrayList<>();
-        String duongdan="http://10.0.3.2/appshop/loaisanpham.php";
+        String duongdan= TrangChuActivity.SERVER_NAME;
         String dataJSON="";
+        HashMap<String,String> hsHam = new HashMap<>();
+        hsHam.put("ham","LayDanhSachMenu");
+        attrs.add(hsHam);
 
-        HashMap<String,String> hsMaLoaiCha = new HashMap<>();
-        hsMaLoaiCha.put("maloaicha",String.valueOf(maloaisp));
-        attrs.add(hsMaLoaiCha);
         DownloadJSON downloadJSON= new DownloadJSON(duongdan,attrs);
         downloadJSON.execute();
 

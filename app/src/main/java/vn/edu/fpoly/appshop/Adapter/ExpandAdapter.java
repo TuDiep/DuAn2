@@ -2,8 +2,10 @@ package vn.edu.fpoly.appshop.Adapter;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -26,6 +28,7 @@ import vn.edu.fpoly.appshop.R;
 public class ExpandAdapter extends BaseExpandableListAdapter {
     Context context;
     List<LoaiSanPham> loaiSanPhams;
+    ViewHolderMenu viewHolderMenu;
     public  ExpandAdapter (Context context, List<LoaiSanPham> loaiSanPhams){
         this.context = context;
         this.loaiSanPhams = loaiSanPhams;
@@ -80,30 +83,49 @@ public class ExpandAdapter extends BaseExpandableListAdapter {
         return false;
     }
 
+    public class ViewHolderMenu{
+        TextView txtTenToaiSP;
+        ImageView hinhMenu;
+    }
+
     @Override
-    public View getGroupView(int vitriGroupCha, boolean isExpanded, View convertView, ViewGroup parent) {
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.custom_layout_group_cha,parent,false);
-        ImageView imageView = (ImageView) view.findViewById(R.id.ImPlus);
-        TextView txtTenloaisp = (TextView) view.findViewById(R.id.txtTenloaisp);
-        txtTenloaisp.setText(loaiSanPhams.get(vitriGroupCha).getTENLOAISP());
+    public View getGroupView(final int vitriGroupCha, boolean isExpanded, View convertView, ViewGroup parent) {
+
+        View view = convertView;
+         if (view==null){
+            viewHolderMenu = new ViewHolderMenu();
+
+             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+              view = layoutInflater.inflate(R.layout.custom_layout_group_cha,parent,false);
+             viewHolderMenu.hinhMenu = (ImageView) view.findViewById(R.id.ImPlus);
+             viewHolderMenu.txtTenToaiSP = (TextView) view.findViewById(R.id.txtTenloaisp);
+             view.setTag(viewHolderMenu);
+         }
+        else {
+             viewHolderMenu = (ViewHolderMenu) view.getTag();
+         }
+
+
+        viewHolderMenu.txtTenToaiSP.setText(loaiSanPhams.get(vitriGroupCha).getTENLOAISP());
         int demlist = loaiSanPhams.get(vitriGroupCha).getListcon().size();
 
         if (demlist>0){
-            imageView.setVisibility(View.VISIBLE);
+            viewHolderMenu.hinhMenu.setVisibility(View.VISIBLE);
         }else {
-            imageView.setVisibility(View.INVISIBLE);
+            viewHolderMenu.hinhMenu.setVisibility(View.INVISIBLE);
         }
 
         if(isExpanded){
-            imageView.setImageResource(R.drawable.ic_remove_black_24dp);
+            viewHolderMenu.hinhMenu.setImageResource(R.drawable.ic_remove_black_24dp);
+
         }else {
-            imageView.setImageResource(R.drawable.ic_add_black_24dp);
+            viewHolderMenu.hinhMenu.setImageResource(R.drawable.ic_add_black_24dp);
         }
-        view.setOnClickListener(new View.OnClickListener() {
+        view.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                
+            public boolean onTouch(View v, MotionEvent event) {
+                Log.d("loaisp", loaiSanPhams.get(vitriGroupCha).getTENLOAISP()+ " - " + loaiSanPhams.get(vitriGroupCha).getMALOAISP() );
+                return false;
             }
         });
 

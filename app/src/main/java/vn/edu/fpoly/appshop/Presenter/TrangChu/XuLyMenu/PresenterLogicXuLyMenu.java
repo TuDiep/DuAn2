@@ -8,6 +8,7 @@ import java.util.concurrent.ExecutionException;
 import vn.edu.fpoly.appshop.ConnectInternet.DownloadJSON;
 import vn.edu.fpoly.appshop.Model.ObjectClass.LoaiSanPham;
 import vn.edu.fpoly.appshop.Model.TrangChu.XuLyMenu.XuLyJSONMenu;
+import vn.edu.fpoly.appshop.View.TrangChu.TrangChuActivity;
 import vn.edu.fpoly.appshop.View.TrangChu.ViewXuLyMenu;
 
 /**
@@ -27,14 +28,19 @@ public class PresenterLogicXuLyMenu implements IPresenterXuLyMenu {
         List<LoaiSanPham> loaiSanPhamList;
         String dataJSON="";
         List<HashMap<String,String>> attrs = new ArrayList<>();
+        HashMap<String,String> hsHam = new HashMap<>();
+        hsHam.put("ham","LayDanhSachMenu");
 ////        String duongdan="http://10.0.3.2/appshop/loaisanpham.php?maloaicha=";
 //
 //        DownloadJSON downloadJSON = new DownloadJSON(duongdan);
 
-        String duongdan="http://10.0.3.2/appshop/loaisanpham.php";
+        String duongdan= TrangChuActivity.SERVER_NAME;
+
         HashMap<String,String> hsMaLoaiCha = new HashMap<>();
         hsMaLoaiCha.put("maloaicha","0");
         attrs.add(hsMaLoaiCha);
+        attrs.add(hsHam);
+
         DownloadJSON downloadJSON= new DownloadJSON(duongdan,attrs);
         downloadJSON.execute();
 

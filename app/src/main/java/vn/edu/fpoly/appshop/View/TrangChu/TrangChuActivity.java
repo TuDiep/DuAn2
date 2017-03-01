@@ -23,6 +23,7 @@ import vn.edu.fpoly.appshop.R;
 import vn.edu.fpoly.appshop.View.Account.AccountActivity;
 
 public class TrangChuActivity extends AppCompatActivity implements  ViewXuLyMenu{
+    public static final String SERVER_NAME = "http://10.0.3.2/appshop/loaisanpham.php";
     Toolbar toolbar;
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -94,9 +95,9 @@ public class TrangChuActivity extends AppCompatActivity implements  ViewXuLyMenu
 
         }
 
-//        if(drawerToggle.onOptionsItemSelected(item)){
-//            return true;
-//        }
+        if(drawerToggle.onOptionsItemSelected(item)){
+            return true;
+        }
         return true;
     }
 
