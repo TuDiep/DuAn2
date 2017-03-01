@@ -20,4 +20,6 @@ public class FragmentDangKy extends Fragment {
         View view = inflater.inflate(R.layout.layout_fragment_dangky, container, false);
         return view;
     }
+
+
 }
